@@ -25,6 +25,12 @@ class CreateQuotesTable extends Migration
             //
             $table->unsignedBigInteger('forma_pago_id');
             $table->foreign("forma_pago_id")->references("id")->on("forma_pago")->onUpdate("cascade")->onDelete("cascade");
+            //
+            $table->unsignedBigInteger('servicios_id');
+            $table->foreign("servicios_id")->references("id")->on("servicios")->onUpdate("cascade")->onDelete("cascade");
+            //
+            $table->unsignedBigInteger('clientes_id');
+            $table->foreign("clientes_id")->references("id")->on("clientes")->onUpdate("cascade")->onDelete("cascade");
             $table->timestamps();
         });
     }

@@ -21,6 +21,9 @@ class CreateEmployeeTable extends Migration
             $table->string('direccion',50);
             $table->date('fecha_nacimiento');
             $table->float('salario', 9,2);
+            //
+            $table->unsignedBigInteger('usuarios_id');
+            $table->foreign("usuarios_id")->references("id")->on("usuarios")->onUpdate("cascade")->onDelete("cascade");
             $table->timestamps();
         });
     }
